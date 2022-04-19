@@ -13,6 +13,17 @@ function to_string(Exporters\Exporter $value): string
     return $value->value;
 }
 
+function guess(mixed $value): Exporters\Exporter
+{
+    return match (true) {
+        is_bool($value) => bool($value),
+        is_int($value) => int($value),
+        is_float($value) => float($value),
+        is_string($value) => string($value),
+        default => throw new NoMatchingExporter($value),
+    };
+}
+
 function bool(bool $value): Exporters\BoolExporter
 {
     return new Exporters\BoolExporter($value);
