@@ -15,6 +15,10 @@ function to_string(Exporters\Exporter $value): string
 
 function guess(mixed $value): Exporters\Exporter
 {
+    if (is_array($value) && array_is_list($value)) {
+        return vec(array_map(fn (mixed $v) => guess($v), $value));
+    }
+
     return match (true) {
         is_bool($value) => bool($value),
         is_int($value) => int($value),
@@ -42,4 +46,12 @@ function float(float $value): Exporters\FloatExporter
 function string(string $value): Exporters\StringExporter
 {
     return new Exporters\StringExporter($value);
+}
+
+/**
+ * @param list<Exporters\Exporter> $value
+ */
+function vec(array $value): Exporters\VecExporter
+{
+    return new Exporters\VecExporter($value);
 }
