@@ -23,6 +23,11 @@ function int(int $value): Exporters\IntExporter
     return new Exporters\IntExporter($value);
 }
 
+function float(float $value): Exporters\FloatExporter
+{
+    return new Exporters\FloatExporter($value);
+}
+
 function string(string $value): Exporters\StringExporter
 {
     return new Exporters\StringExporter($value);
