@@ -17,3 +17,8 @@ function bool(bool $value): Exporters\BoolExporter
 {
     return new Exporters\BoolExporter($value);
 }
+
+function string(string $value): Exporters\StringExporter
+{
+    return new Exporters\StringExporter($value);
+}
