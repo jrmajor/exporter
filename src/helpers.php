@@ -18,6 +18,11 @@ function bool(bool $value): Exporters\BoolExporter
     return new Exporters\BoolExporter($value);
 }
 
+function int(int $value): Exporters\IntExporter
+{
+    return new Exporters\IntExporter($value);
+}
+
 function string(string $value): Exporters\StringExporter
 {
     return new Exporters\StringExporter($value);
