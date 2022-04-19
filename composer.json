@@ -1,0 +1,44 @@
+{
+    "name": "jrmajor/exporter",
+    "description": "Like var_export, but unstable and you shouldn't use it",
+    "license": "MIT",
+    "keywords": [
+        "var_export",
+        "serializer"
+    ],
+    "authors": [
+        {
+            "name": "Jeremiasz Major",
+            "email": "jrh.mjr@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/jrmajor/exporter",
+    "require": {
+        "php": "~8.1.0",
+        "azjezz/psl": "^1.9 || ^2.0"
+    },
+    "require-dev": {
+        "jrmajor/cs": "^0.4.0",
+        "php-standard-library/psalm-plugin": "^2.0",
+        "phpunit/phpunit": "10.0.x-dev",
+        "psalm/plugin-phpunit": "^0.16.1",
+        "sebastian/diff": "5.0.x-dev as 4.0.4",
+        "symfony/var-dumper": "^6.0",
+        "vimeo/psalm": "5.0.0-alpha1 as 4.22.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Major\\Exporter\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Major\\Exporter\\Tests\\": "tests"
+        }
+    }
+}
