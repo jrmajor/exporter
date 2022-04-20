@@ -29,6 +29,10 @@ final class FileWriter
     {
         $imports = $imports->optimized();
 
+        /**
+         * @psalm-suppress InvalidArgument Only on PSL v1.9
+         * @var string Needed only on PSL v1.9
+         */
         return Iter\reduce_with_keys(
             [
                 'use' => $imports->class,
@@ -38,7 +42,7 @@ final class FileWriter
             /**
              * @param list<string> $imports
              */
-            function (string $acc, string $type, array $imports) {
+            function (string $acc, string $type, array $imports): string {
                 $imports = Vec\map($imports, fn (string $i): string => "{$type} {$i};");
                 $imports = Str\join($imports, "\n");
 
