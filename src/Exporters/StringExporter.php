@@ -12,12 +12,12 @@ final class StringExporter extends Exporter
         "\n" => '\\n', // line feed
         "\r" => '\\r', // carriage return
         "\t" => '\\t', // character tabulation
-        "\u{a0}" => '\\u{a0}', // no break space
+        "\u{A0}" => '\\u{A0}', // no break space
         "\u{2007}" => '\\u{2007}', // figure space
-        "\u{200b}" => '\\u{200b}', // zero width space
-        "\u{200e}" => '\\u{200e}', // left-to-right mark
-        "\u{200f}" => '\\u{200f}', // right-to-left mark
-        "\u{202f}" => '\\u{202f}', // narrow no break space
+        "\u{200B}" => '\\u{200B}', // zero width space
+        "\u{200E}" => '\\u{200E}', // left-to-right mark
+        "\u{200F}" => '\\u{200F}', // right-to-left mark
+        "\u{202F}" => '\\u{202F}', // narrow no break space
         "\u{2060}" => '\\u{2060}', // word joiner
     ];
 

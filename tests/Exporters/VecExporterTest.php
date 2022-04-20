@@ -54,16 +54,16 @@ final class VecExporterTest extends TestCase
                     'this is a pretty long list',
                     'should be multiline',
                     "let's test some escapes:",
-                    '\\r\\n\\t\'"\\u{200b}',
-                    "\r\n\t'\"\\\u{200b}",
+                    '\\r\\n\\t\'"\\u{200B}',
+                    "\r\n\t'\"\\\u{200B}",
                 ]
                 PHP,
             [
                 E\string('this is a pretty long list'),
                 E\string('should be multiline'),
                 E\string("let's test some escapes:"),
-                E\string('\\r\\n\\t\'"\\u{200b}'),
-                E\string("\r\n\t'\"\\\u{200b}"),
+                E\string('\\r\\n\\t\'"\\u{200B}'),
+                E\string("\r\n\t'\"\\\u{200B}"),
             ],
         ];
 

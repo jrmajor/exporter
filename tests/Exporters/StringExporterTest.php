@@ -38,8 +38,8 @@ final class StringExporterTest extends TestCase
                 "some whitespace: (\r\n and \t)",
             ],
             'non-printable' => [
-                '"non-printable: (\\u{200b} and \\u{200e})"',
-                "non-printable: (\u{200b} and \u{200e})",
+                '"non-printable: (\\u{200B} and \\u{200E})"',
+                "non-printable: (\u{200B} and \u{200E})",
             ],
         ];
     }
