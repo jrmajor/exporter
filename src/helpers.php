@@ -13,6 +13,11 @@ function to_string(Exporters\Exporter $value): string
     return $value->value;
 }
 
+function to_file(Exporters\Exporter $value): string
+{
+    return (string) new Writers\FileWriter($value);
+}
+
 function guess(mixed $value): Exporters\Exporter
 {
     if (is_array($value) && array_is_list($value)) {

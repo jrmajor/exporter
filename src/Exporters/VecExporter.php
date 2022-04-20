@@ -23,7 +23,7 @@ final class VecExporter extends ArrayExporter
             $v = $v->indent($this->indentation(1))->export();
 
             $values[] = $v->value;
-            $imports->merge($v->imports);
+            $imports = $imports->merge($v->imports);
         }
 
         return [$values, $imports];
