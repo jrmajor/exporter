@@ -4,6 +4,7 @@ namespace Major\Exporter\Tests;
 
 use Major\Exporter\Exported;
 use Major\Exporter\Exporters\Exporter;
+use Major\Exporter\Exporters\Traits\IgnoresIndentation;
 use Major\Exporter\Imports;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
@@ -13,7 +14,9 @@ abstract class TestCase extends BaseTestCase
         string $value,
         Imports $imports = new Imports(),
     ): Exporter {
-        return new class ($value, $imports) extends Exporter {
+        return new class ($value, $imports) implements Exporter {
+            use IgnoresIndentation;
+
             public function __construct(
                 private readonly string $value,
                 private readonly Imports $imports,

@@ -6,7 +6,10 @@ use Major\Exporter\Exported;
 use Psl\Str;
 use Psl\Vec;
 
-final class StringExporter extends Exporter
+/**
+ * @extends ScalarExporter<string>
+ */
+final class StringExporter extends ScalarExporter
 {
     private const ESCAPES = [
         "\n" => '\\n', // line feed
@@ -20,10 +23,6 @@ final class StringExporter extends Exporter
         "\u{202F}" => '\\u{202F}', // narrow no break space
         "\u{2060}" => '\\u{2060}', // word joiner
     ];
-
-    public function __construct(
-        private string $value,
-    ) { }
 
     public function export(): Exported
     {

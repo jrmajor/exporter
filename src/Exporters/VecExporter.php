@@ -4,13 +4,11 @@ namespace Major\Exporter\Exporters;
 
 use Major\Exporter\Imports;
 
+/**
+ * @extends ArrayExporter<list<Exporter>>
+ */
 final class VecExporter extends ArrayExporter
 {
-    public function __construct(
-        /** @var list<Exporter> */
-        private readonly array $value,
-    ) { }
-
     /**
      * @return array{list<string>, Imports}
      */
