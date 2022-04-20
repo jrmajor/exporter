@@ -2,6 +2,8 @@
 
 namespace Major\Exporter;
 
+use Major\Exporter\Exceptions\NoMatchingExporter;
+
 function to_string(Exporters\Exporter $value): string
 {
     return (string) new Writers\StringWriter($value);

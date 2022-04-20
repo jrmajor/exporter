@@ -5,6 +5,7 @@ namespace Major\Exporter\Tests;
 use DateTime;
 use Generator;
 use Major\Exporter as E;
+use Major\Exporter\Exceptions\NoMatchingExporter;
 use Major\Exporter\Exporters;
 use PHPUnit\Framework\Attributes\DataProvider;
 
@@ -21,7 +22,7 @@ final class GuesserTest extends TestCase
 
     public function testItThrows(): void
     {
-        $this->expectException(E\NoMatchingExporter::class);
+        $this->expectException(NoMatchingExporter::class);
         $this->expectExceptionMessage('Could not find matching exporter for DateTime.');
 
         E\guess(new DateTime());

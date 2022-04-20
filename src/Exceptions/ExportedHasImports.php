@@ -1,6 +1,6 @@
 <?php
 
-namespace Major\Exporter;
+namespace Major\Exporter\Exceptions;
 
 use Exception;
 

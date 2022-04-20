@@ -3,6 +3,7 @@
 namespace Major\Exporter\Tests\Writers;
 
 use Major\Exporter as E;
+use Major\Exporter\Exceptions\ExportedHasImports;
 use Major\Exporter\Tests\TestCase;
 
 final class StringWriterTest extends TestCase
@@ -17,7 +18,7 @@ final class StringWriterTest extends TestCase
 
     public function testItThrows(): void
     {
-        $this->expectException(E\ExportedHasImports::class);
+        $this->expectException(ExportedHasImports::class);
         $this->expectExceptionMessage('Exported value has imports, can not write it to string.');
 
         E\to_string($this->mockExporter(

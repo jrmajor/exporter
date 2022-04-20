@@ -2,7 +2,7 @@
 
 namespace Major\Exporter\Writers;
 
-use Major\Exporter\ExportedHasImports;
+use Major\Exporter\Exceptions\ExportedHasImports;
 
 final class StringWriter extends Writer
 {
