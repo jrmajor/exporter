@@ -2,18 +2,13 @@
 
 namespace Major\Exporter\Writers;
 
-use Major\Exporter\Exporters\Exporter;
 use Major\Exporter\Imports;
 use Psl\Iter;
 use Psl\Str;
 use Psl\Vec;
 
-final class FileWriter
+final class FileWriter extends Writer
 {
-    public function __construct(
-        private readonly Exporter $value,
-    ) { }
-
     public function __toString(): string
     {
         $value = $this->value->export();
