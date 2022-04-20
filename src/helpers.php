@@ -3,6 +3,8 @@
 namespace Major\Exporter;
 
 use Major\Exporter\Exceptions\NoMatchingExporter;
+use Psl\Iter;
+use Psl\Type;
 
 function to_string(Exporters\Exporter $value): string
 {
@@ -55,4 +57,29 @@ function string(string $value): Exporters\StringExporter
 function vec(array $value): Exporters\VecExporter
 {
     return new Exporters\VecExporter($value);
+}
+
+/**
+ * @param list<string|Exported> $values
+ */
+function join(array $values, string $glue = ''): Exported
+{
+    $first = true;
+
+    $reducer = function (
+        Exported $acc, string|Exported $value,
+    ) use ($glue, &$first): Exported {
+        [$g, $first] = [$first ? '' : $glue, false];
+
+        if (Type\string()->matches($value)) {
+            return new Exported($acc->value . $g . $value, $acc->imports);
+        }
+
+        return new Exported(
+            $acc->value . $g . $value->value,
+            $acc->imports->merge($value->imports),
+        );
+    };
+
+    return Iter\reduce($values, $reducer, new Exported(''));
 }

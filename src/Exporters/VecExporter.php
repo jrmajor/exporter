@@ -2,7 +2,8 @@
 
 namespace Major\Exporter\Exporters;
 
-use Major\Exporter\Imports;
+use Major\Exporter\Exported;
+use Psl\Vec;
 
 /**
  * @extends ArrayExporter<list<Exporter>>
@@ -10,20 +11,12 @@ use Major\Exporter\Imports;
 final class VecExporter extends ArrayExporter
 {
     /**
-     * @return array{list<string>, Imports}
+     * @return list<Exported>
      */
     protected function values(): array
     {
-        $values = [];
-        $imports = new Imports();
-
-        foreach ($this->value as $v) {
-            $v = $v->indent($this->indentation(1))->export();
-
-            $values[] = $v->value;
-            $imports = $imports->merge($v->imports);
-        }
-
-        return [$values, $imports];
+        return Vec\map($this->value, function (Exporter $v): Exported {
+            return $v->indent($this->indentation(1))->export();
+        });
     }
 }
