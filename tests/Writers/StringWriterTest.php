@@ -12,7 +12,7 @@ final class StringWriterTest extends TestCase
     {
         $this->assertSame(
             "['foo', 123]",
-            E\to_string(E\vec([E\string('foo'), E\int(123)])),
+            (string) E\vec([E\string('foo'), E\int(123)]),
         );
     }
 
@@ -21,9 +21,9 @@ final class StringWriterTest extends TestCase
         $this->expectException(ExportedHasImports::class);
         $this->expectExceptionMessage('Exported value has imports, can not write it to string.');
 
-        E\to_string($this->mockExporter(
+        (string) $this->mockExporter(
             'new Bar()',
             new E\Imports(['Foo\\Bar']),
-        ));
+        );
     }
 }

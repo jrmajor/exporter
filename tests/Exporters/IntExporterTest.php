@@ -12,7 +12,7 @@ final class IntExporterTest extends TestCase
     #[DataProvider('provideCases')]
     public function testItWorks(string $out, int $in): void
     {
-        $exported = E\to_string(E\int($in));
+        $exported = (string) E\int($in);
 
         $this->assertSame($out, $exported);
     }

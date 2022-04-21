@@ -17,7 +17,7 @@ final class VecExporterTest extends TestCase
     #[DataProvider('provideSinglelineCases')]
     public function testSinglelineWorks(string $out, array $in): void
     {
-        $exported = E\to_string(E\vec($in));
+        $exported = (string) E\vec($in);
 
         $this->assertSame($out, $exported);
     }
@@ -28,7 +28,7 @@ final class VecExporterTest extends TestCase
     #[DataProvider('provideMultilineCases')]
     public function testMultilineWorks(string $out, array $in): void
     {
-        $exported = E\to_string(E\vec($in)->multiline());
+        $exported = (string) E\vec($in)->multiline();
 
         $this->assertSame($out, $exported);
     }

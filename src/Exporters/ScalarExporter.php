@@ -10,6 +10,7 @@ use Major\Exporter\Exported;
 abstract class ScalarExporter implements Exporter
 {
     use Traits\IgnoresIndentation;
+    use Traits\IsStringable;
 
     /**
      * @param T $value

@@ -12,7 +12,7 @@ final class FloatExporterTest extends TestCase
     #[DataProvider('provideCases')]
     public function testItWorks(string $out, float $in): void
     {
-        $exported = E\to_string(E\float($in));
+        $exported = (string) E\float($in);
 
         $this->assertSame($out, $exported);
     }

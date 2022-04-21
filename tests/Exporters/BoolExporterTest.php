@@ -12,7 +12,7 @@ final class BoolExporterTest extends TestCase
     #[DataProvider('provideCases')]
     public function testItWorks(string $out, bool $in): void
     {
-        $exported = E\to_string(E\bool($in));
+        $exported = (string) E\bool($in);
 
         $this->assertSame($out, $exported);
     }

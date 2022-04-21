@@ -3,8 +3,9 @@
 namespace Major\Exporter\Exporters;
 
 use Major\Exporter\Exported;
+use Stringable;
 
-interface Exporter
+interface Exporter extends Stringable
 {
     public function export(): Exported;
 

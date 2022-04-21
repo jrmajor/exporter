@@ -11,6 +11,7 @@ use Major\Exporter\Exported;
 abstract class ArrayExporter implements Exporter
 {
     use Traits\HasIndentation;
+    use Traits\IsStringable;
     use Traits\MayBeMultiline;
 
     /**
