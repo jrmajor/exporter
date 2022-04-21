@@ -5,11 +5,13 @@ namespace Major\Exporter\Exporters;
 use Major\Exporter\Exported;
 use Psl\Vec;
 
-/**
- * @extends ArrayExporter<list<Exporter>>
- */
 final class VecExporter extends ArrayExporter
 {
+    public function __construct(
+        /** @var list<Exporter> */
+        private readonly array $value,
+    ) { }
+
     /**
      * @return list<Exported>
      */

@@ -38,9 +38,7 @@ final class VecExporterTest extends TestCase
      */
     public function provideSinglelineCases(): Generator
     {
-        yield from [
-            'short list' => ["['a', 2.3]", [E\string('a'), E\float(2.3)]],
-        ];
+        yield 'short list' => ["['a', 2.3]", [E\string('a'), E\float(2.3)]];
     }
 
     /**

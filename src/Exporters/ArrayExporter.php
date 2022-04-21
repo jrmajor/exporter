@@ -5,21 +5,11 @@ namespace Major\Exporter\Exporters;
 use Major\Exporter as E;
 use Major\Exporter\Exported;
 
-/**
- * @template T of array
- */
 abstract class ArrayExporter implements Exporter
 {
     use Traits\HasIndentation;
     use Traits\IsStringable;
     use Traits\MayBeMultiline;
-
-    /**
-     * @param T $value
-     */
-    final public function __construct(
-        protected readonly array $value,
-    ) { }
 
     public function export(): Exported
     {

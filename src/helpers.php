@@ -2,7 +2,9 @@
 
 namespace Major\Exporter;
 
+use Closure;
 use Major\Exporter\Exceptions\NoMatchingExporter;
+use Psl\Dict;
 use Psl\Iter;
 use Psl\Type;
 
@@ -18,8 +20,11 @@ function to_file(Exporters\Exporter $value): string
 
 function guess(mixed $value): Exporters\Exporter
 {
-    if (is_array($value) && array_is_list($value)) {
-        return vec(array_map(fn (mixed $v) => guess($v), $value));
+    if (is_array($value)) {
+        $value = Dict\map($value, fn (mixed $v) => guess($v));
+
+        /** @psalm-suppress MixedArgumentTypeCoercion */
+        return array_is_list($value) ? vec($value) : dict($value);
     }
 
     return match (true) {
@@ -57,6 +62,18 @@ function string(string $value): Exporters\StringExporter
 function vec(array $value): Exporters\VecExporter
 {
     return new Exporters\VecExporter($value);
+}
+
+/**
+ * @template Tk of array-key
+ *
+ * @param array<Tk, Exporters\Exporter> $value
+ * @param ?Closure(Tk): Exporters\Exporter $keyExporter
+ * @return Exporters\DictExporter<Tk>
+ */
+function dict(array $value, ?Closure $keyExporter = null): Exporters\DictExporter
+{
+    return new Exporters\DictExporter($value, $keyExporter ?? guess(...));
 }
 
 /**
