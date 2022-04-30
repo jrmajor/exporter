@@ -4,7 +4,6 @@ namespace Major\Exporter\Exporters;
 
 use Major\Exporter\Exported;
 use Psl\Str;
-use Psl\Vec;
 
 /**
  * @extends ScalarExporter<string>
@@ -26,36 +25,48 @@ final class StringExporter extends ScalarExporter
 
     public function export(): Exported
     {
-        $quote = $this->getCorrectQuote();
+        $chars = mb_str_split($this->value);
 
-        $chars = Vec\map(
-            Str\split($this->value, ''),
-            fn (string $c): string => match (true) {
-                $c === $quote => "\\{$c}",
-                $c === '$' && $quote === '"' => '\\$',
-                $c === '\\' => '\\\\',
-                default => self::ESCAPES[$c] ?? $c,
-            },
-        );
+        $types = ['single' => false, 'double' => false, 'escape' => false];
 
-        return new Exported($quote . Str\join($chars, '') . $quote);
-    }
+        /** @var array<int, 'single'|'double'|'dollar'|'slash'|'escape'> $escapes */
+        $escapes = [];
 
-    private function getCorrectQuote(): string
-    {
-        if (
-            Str\contains($this->value, "'")
-            && ! Str\contains($this->value, '"')
-        ) {
-            return '"';
-        }
+        foreach ($chars as $index => $char) {
+            $escape = match (true) {
+                $char === "'" => 'single',
+                $char === '"' => 'double',
+                $char === '$' => 'dollar',
+                $char === '\\' => 'slash',
+                array_key_exists($char, self::ESCAPES) => 'escape',
+                default => null,
+            };
 
-        foreach (self::ESCAPES as $char => $_) {
-            if (Str\contains($this->value, $char)) {
-                return '"';
+            if ($escape === null) {
+                continue;
             }
+
+            $types[$escape] = true;
+            $escapes[$index] = $escape;
         }
 
-        return "'";
+        $quote = match (true) {
+            $types['single'] && ! $types['double'],
+            $types['escape'] => '"',
+            default => "'",
+        };
+
+        foreach ($escapes as $index => $escape) {
+            $chars[$index] = match ($escape) {
+                'single' => $quote === "'" ? "\\'" : "'",
+                'double' => $quote === '"' ? '\\"' : '"',
+                'dollar' => $quote === '"' ? '\\$' : '$',
+                'slash' => '\\\\',
+                'escape' => self::ESCAPES[$chars[$index]],
+            };
+        }
+
+        /** @psalm-suppress ArgumentTypeCoercion */
+        return new Exported($quote . Str\join($chars, '') . $quote);
     }
 }
