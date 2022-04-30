@@ -38,7 +38,9 @@ final class GuesserTest extends TestCase
             'int' => [Exporters\IntExporter::class, 19],
             'float' => [Exporters\FloatExporter::class, 4.5],
             'string' => [Exporters\StringExporter::class, 'foo'],
-            'vec' => [Exporters\VecExporter::class, []],
+            'vec' => [Exporters\VecExporter::class, [1, 2]],
+            'int dict' => [Exporters\DictExporter::class, [12 => 'a']],
+            'string vec' => [Exporters\DictExporter::class, ['a' => 'b']],
         ];
     }
 }
