@@ -7,13 +7,12 @@ on:
 
 jobs:
   psalm:
-    name: PHP ${{ matrix.php }}, PSL ${{ matrix.psl }}
+    name: PHP ${{ matrix.php }}
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
         php: ['8.1']
-        psl: ['1.9', '2.0']
 
     steps:
       - name: Checkout code
@@ -45,14 +44,6 @@ jobs:
 
       - name: Install Composer dependencies
         run: composer install --no-progress --no-interaction
-
-      - name: Install PSL v1.9
-        if: ${{ matrix.psl == '1.9' }}
-        run: composer require azjezz/psl:^${{ matrix.psl }} php-standard-library/psalm-plugin:^1.1
-
-      - name: Install PSL v2.0
-        if: ${{ matrix.psl == '2.0' }}
-        run: composer require azjezz/psl:^${{ matrix.psl }} php-standard-library/psalm-plugin:^2.0
 
       - name: Run Psalm
         run: vendor/bin/psalm --output-format=github --no-progress
