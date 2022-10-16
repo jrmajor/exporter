@@ -24,10 +24,6 @@ final class FileWriter extends Writer
     {
         $imports = $imports->optimized();
 
-        /**
-         * @psalm-suppress InvalidArgument Only on PSL v1.9
-         * @var string Needed only on PSL v1.9
-         */
         return Iter\reduce_with_keys(
             [
                 'use' => $imports->class,

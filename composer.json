@@ -18,14 +18,14 @@
         "azjezz/psl": "^2.0"
     },
     "require-dev": {
-        "jrmajor/cs": "^0.4.0",
+        "jrmajor/cs": "^0.4.6",
         "php-standard-library/psalm-plugin": "^2.0",
         "phpbench/phpbench": "^1.2",
-        "phpunit/phpunit": "10.0.x-dev",
-        "psalm/plugin-phpunit": "^0.16.1",
-        "sebastian/diff": "5.0.x-dev as 4.0.4",
-        "symfony/var-dumper": "^6.0",
-        "vimeo/psalm": "5.0.0-alpha1 as 4.22.0"
+        "phpunit/phpunit": "10.0.x-dev#969707c",
+        "psalm/plugin-phpunit": "^0.17.0",
+        "sebastian/diff": "5.0.x-dev#5acc6d5 as 4.0.4",
+        "symfony/var-dumper": "^6.1",
+        "vimeo/psalm": "5.0.0-beta1 as 4.29.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
