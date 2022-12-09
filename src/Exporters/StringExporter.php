@@ -15,6 +15,7 @@ final class StringExporter extends ScalarExporter
         "\r" => '\\r', // carriage return
         "\t" => '\\t', // character tabulation
         "\u{A0}" => '\\u{A0}', // no break space
+        "\u{061C}" => '\\u{061C}', // arabic letter mark
         "\u{2007}" => '\\u{2007}', // figure space
         "\u{200B}" => '\\u{200B}', // zero width space
         "\u{200E}" => '\\u{200E}', // left-to-right mark
