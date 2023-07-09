@@ -20,7 +20,7 @@ final class FloatExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, float}>
      */
-    public function provideCases(): Generator
+    public static function provideCases(): Generator
     {
         yield from [
             'positive' => ['6.9', 6.9],

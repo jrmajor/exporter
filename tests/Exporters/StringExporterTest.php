@@ -20,7 +20,7 @@ final class StringExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, string}>
      */
-    public function provideCases(): Generator
+    public static function provideCases(): Generator
     {
         yield from [
             'no quotes' => ["'no quotes :)'", 'no quotes :)'],

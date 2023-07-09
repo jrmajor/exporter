@@ -36,7 +36,7 @@ final class DictExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, array<Exporters\Exporter>}>
      */
-    public function provideSinglelineCases(): Generator
+    public static function provideSinglelineCases(): Generator
     {
         yield 'short array' => [
             "['a' => 'a', 'b' => 1, 'c' => 2.3]",
@@ -47,7 +47,7 @@ final class DictExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, array<Exporters\Exporter>}>
      */
-    public function provideMultilineCases(): Generator
+    public static function provideMultilineCases(): Generator
     {
         yield 'long array' => [
             <<<'PHP'

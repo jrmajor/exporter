@@ -31,7 +31,7 @@ final class GuesserTest extends TestCase
     /**
      * @return Generator<string, array{class-string<Exporters\Exporter>, mixed}>
      */
-    public function provideCases(): Generator
+    public static function provideCases(): Generator
     {
         yield from [
             'bool' => [Exporters\BoolExporter::class, true],

@@ -36,7 +36,7 @@ final class VecExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, list<Exporters\Exporter>}>
      */
-    public function provideSinglelineCases(): Generator
+    public static function provideSinglelineCases(): Generator
     {
         yield 'short list' => ["['a', 2.3]", [E\string('a'), E\float(2.3)]];
     }
@@ -44,7 +44,7 @@ final class VecExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, list<Exporters\Exporter>}>
      */
-    public function provideMultilineCases(): Generator
+    public static function provideMultilineCases(): Generator
     {
         yield 'long list' => [
             <<<'PHP'

@@ -20,7 +20,7 @@ final class IntExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, int}>
      */
-    public function provideCases(): Generator
+    public static function provideCases(): Generator
     {
         yield from [
             'positive' => ['420', 420],

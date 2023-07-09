@@ -20,7 +20,7 @@ final class BoolExporterTest extends TestCase
     /**
      * @return Generator<string, array{string, bool}>
      */
-    public function provideCases(): Generator
+    public static function provideCases(): Generator
     {
         yield from [
             'true' => ['true', true],
