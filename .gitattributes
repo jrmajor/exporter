@@ -1,8 +1,8 @@
-/.cache                export-ignore
 /.github               export-ignore
 /tests                 export-ignore
 /.editorconfig         export-ignore
 /.php-cs-fixer.php     export-ignore
 /composer.lock         export-ignore
+/phpbench.json         export-ignore
 /phpunit.xml.dist      export-ignore
 /psalm.xml             export-ignore
