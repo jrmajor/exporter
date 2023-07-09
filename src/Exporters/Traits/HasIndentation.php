@@ -11,6 +11,7 @@ trait HasIndentation
 
     /**
      * @param int<0, max> $n
+     *
      * @return $this
      */
     final public function indent(int $n): self
@@ -22,6 +23,7 @@ trait HasIndentation
 
     /**
      * @param int<0, max> $add
+     *
      * @return int<0, max>
      */
     final protected function indentation(int $add = 0): int

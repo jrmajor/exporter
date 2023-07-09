@@ -69,6 +69,7 @@ function vec(array $value): Exporters\VecExporter
  *
  * @param array<Tk, Exporters\Exporter> $value
  * @param ?Closure(Tk): Exporters\Exporter $keyExporter
+ *
  * @return Exporters\DictExporter<Tk>
  */
 function dict(array $value, ?Closure $keyExporter = null): Exporters\DictExporter

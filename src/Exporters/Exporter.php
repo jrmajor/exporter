@@ -11,6 +11,7 @@ interface Exporter extends Stringable
 
     /**
      * @param int<0, max> $n
+     *
      * @return $this
      */
     public function indent(int $n): self;
