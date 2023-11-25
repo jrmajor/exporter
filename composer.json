@@ -18,13 +18,13 @@
         "azjezz/psl": "^2.0"
     },
     "require-dev": {
-        "jrmajor/cs": "^0.5.1",
+        "jrmajor/cs": "^0.5.4",
         "php-standard-library/psalm-plugin": "^2.2",
         "phpbench/phpbench": "^1.2",
-        "phpunit/phpunit": "^10.2",
+        "phpunit/phpunit": "^10.4",
         "psalm/plugin-phpunit": "^0.18.4",
         "symfony/var-dumper": "^6.3",
-        "vimeo/psalm": "^5.13"
+        "vimeo/psalm": "^5.16"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
