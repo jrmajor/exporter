@@ -19,11 +19,11 @@
     },
     "require-dev": {
         "jrmajor/cs": "^0.5.4",
-        "php-standard-library/psalm-plugin": "^2.2",
+        "php-standard-library/psalm-plugin": "^2.3",
         "phpbench/phpbench": "^1.2",
-        "phpunit/phpunit": "^10.4",
+        "phpunit/phpunit": "^10.5",
         "psalm/plugin-phpunit": "^0.18.4",
-        "symfony/var-dumper": "^6.3",
+        "symfony/var-dumper": "^6.4",
         "vimeo/psalm": "^5.16"
     },
     "minimum-stability": "dev",
