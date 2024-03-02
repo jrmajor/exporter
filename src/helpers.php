@@ -23,7 +23,6 @@ function guess(mixed $value): Exporters\Exporter
     if (is_array($value)) {
         $value = Dict\map($value, fn (mixed $v) => guess($v));
 
-        /** @psalm-suppress MixedArgumentTypeCoercion */
         return array_is_list($value) ? vec($value) : dict($value);
     }
 

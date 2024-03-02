@@ -67,7 +67,8 @@ final class StringExporter extends ScalarExporter
             };
         }
 
-        /** @psalm-suppress ArgumentTypeCoercion */
+        /** @var list<string> $chars */
+
         return new Exported($quote . Str\join($chars, '') . $quote);
     }
 }
