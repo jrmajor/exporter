@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51f1ac4656d77e961c9f16704c186738",
+    "content-hash": "29e97258c9d27f3b6eed102fb27d3f0b",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -811,28 +811,28 @@
         },
         {
             "name": "jrmajor/cs",
-            "version": "v0.6.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jrmajor/php-cs.git",
-                "reference": "02ec42269bf3eb3cd980359841238ab26e901a05"
+                "reference": "0ea3cbb164a76c8d30acfec3f07492df5311d841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jrmajor/php-cs/zipball/02ec42269bf3eb3cd980359841238ab26e901a05",
-                "reference": "02ec42269bf3eb3cd980359841238ab26e901a05",
+                "url": "https://api.github.com/repos/jrmajor/php-cs/zipball/0ea3cbb164a76c8d30acfec3f07492df5311d841",
+                "reference": "0ea3cbb164a76c8d30acfec3f07492df5311d841",
                 "shasum": ""
             },
             "require": {
-                "friendsofphp/php-cs-fixer": "^3.58",
-                "kubawerlos/php-cs-fixer-custom-fixers": "^3.21",
-                "php": "8.2 - 8.3"
+                "friendsofphp/php-cs-fixer": "^3.64",
+                "kubawerlos/php-cs-fixer-custom-fixers": "^3.22",
+                "php": "8.2 - 8.4"
             },
             "require-dev": {
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.5",
-                "phpstan/phpstan": "^1.11",
-                "phpstan/phpstan-phpunit": "^1.4",
-                "phpunit/phpunit": "^11.1"
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^11.4"
             },
             "type": "library",
             "autoload": {
@@ -858,9 +858,9 @@
             "homepage": "https://github.com/jrmajor/php-cs",
             "support": {
                 "issues": "https://github.com/jrmajor/php-cs/issues",
-                "source": "https://github.com/jrmajor/php-cs/tree/v0.6.0"
+                "source": "https://github.com/jrmajor/php-cs/tree/v0.6.1"
             },
-            "time": "2024-06-02T11:36:14+00:00"
+            "time": "2024-11-22T18:30:10+00:00"
         },
         {
             "name": "kubawerlos/php-cs-fixer-custom-fixers",
@@ -5120,7 +5120,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "8.2 - 8.3"
+        "php": "8.2 - 8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
