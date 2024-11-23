@@ -10,7 +10,7 @@ use Psl\Str;
  */
 final class StringExporter extends ScalarExporter
 {
-    private const array ESCAPES = [
+    private const array Escapes = [
         "\n" => '\\n', // line feed
         "\r" => '\\r', // carriage return
         "\t" => '\\t', // character tabulation
@@ -39,7 +39,7 @@ final class StringExporter extends ScalarExporter
                 $char === '"' => 'double',
                 $char === '$' => 'dollar',
                 $char === '\\' => 'slash',
-                array_key_exists($char, self::ESCAPES) => 'escape',
+                array_key_exists($char, self::Escapes) => 'escape',
                 default => null,
             };
 
@@ -63,7 +63,7 @@ final class StringExporter extends ScalarExporter
                 'double' => $quote === '"' ? '\\"' : '"',
                 'dollar' => $quote === '"' ? '\\$' : '$',
                 'slash' => '\\\\',
-                'escape' => self::ESCAPES[$chars[$index]],
+                'escape' => self::Escapes[$chars[$index]],
             };
         }
 
