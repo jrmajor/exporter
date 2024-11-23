@@ -10,7 +10,7 @@ use Psl\Str;
  */
 final class StringExporter extends ScalarExporter
 {
-    private const ESCAPES = [
+    private const array ESCAPES = [
         "\n" => '\\n', // line feed
         "\r" => '\\r', // carriage return
         "\t" => '\\t', // character tabulation
