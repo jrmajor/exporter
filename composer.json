@@ -23,7 +23,7 @@
         "phpbench/phpbench": "^1.4",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^11.4",
+        "phpunit/phpunit": "^12.5",
         "symfony/var-dumper": "*"
     },
     "minimum-stability": "dev",
