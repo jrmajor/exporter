@@ -3,8 +3,9 @@
 namespace Major\Exporter\Writers;
 
 use Major\Exporter\Exceptions\ExportedHasImports;
+use Stringable;
 
-final class StringWriter extends Writer
+final class StringWriter extends Writer implements Stringable
 {
     public function __toString(): string
     {

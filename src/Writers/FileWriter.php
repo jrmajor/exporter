@@ -6,8 +6,9 @@ use Major\Exporter\Imports;
 use Psl\Iter;
 use Psl\Str;
 use Psl\Vec;
+use Stringable;
 
-final class FileWriter extends Writer
+final class FileWriter extends Writer implements Stringable
 {
     public function __toString(): string
     {
