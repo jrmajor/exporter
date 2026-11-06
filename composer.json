@@ -15,11 +15,15 @@
     "homepage": "https://github.com/jrmajor/exporter",
     "require": {
         "php": "8.4 - 8.5",
-        "azjezz/psl": "^4.2"
+        "php-standard-library/dict": "^6.4",
+        "php-standard-library/iter": "^6.4",
+        "php-standard-library/str": "^6.4",
+        "php-standard-library/type": "^6.4",
+        "php-standard-library/vec": "^6.4"
     },
     "require-dev": {
         "jrmajor/cs": "^0.7.0",
-        "php-standard-library/phpstan-extension": "^2.0",
+        "php-standard-library/phpstan-extension": "^2.1",
         "phpbench/phpbench": "^1.4",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
