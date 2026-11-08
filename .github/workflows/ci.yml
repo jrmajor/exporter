@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['lowest', 'latest']
+        php: [lowest, latest]
         dependencies: [lowest, highest]
 
     steps:
