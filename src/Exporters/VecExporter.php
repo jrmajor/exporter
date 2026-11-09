@@ -17,8 +17,9 @@ final class VecExporter extends ArrayExporter
      */
     protected function values(): array
     {
-        return Vec\map($this->value, function (Exporter $v): Exported {
-            return $v->indent($this->indentation(1))->export();
-        });
+        return Vec\map(
+            $this->value,
+            fn (Exporter $v): Exported => $v->indent($this->indentation(1))->export(),
+        );
     }
 }

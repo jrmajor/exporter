@@ -5,15 +5,15 @@ namespace Major\Exporter;
 use Psl\Dict;
 use Psl\Vec;
 
-final class Imports
+final readonly class Imports
 {
     public function __construct(
         /** @var list<string> */
-        public readonly array $class = [],
+        public array $class = [],
         /** @var list<string> */
-        public readonly array $func = [],
+        public array $func = [],
         /** @var list<string> */
-        public readonly array $const = [],
+        public array $const = [],
     ) { }
 
     public function merge(self $imports): self
