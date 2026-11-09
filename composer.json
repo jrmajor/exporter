@@ -30,6 +30,8 @@
         "phpunit/phpunit": "^13.4",
         "symfony/var-dumper": "*"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Major\\Exporter\\": "src"

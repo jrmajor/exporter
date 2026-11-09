@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "024b81bd49ed1aa12c8d6d1143f1ee23",
+    "content-hash": "dcaa9a73297d7278313c0db3620ff422",
     "packages": [
         {
             "name": "php-standard-library/collection",
@@ -6361,9 +6361,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "8.4 - 8.6"
