@@ -6,7 +6,8 @@ use Closure;
 use Major\Exporter\Exceptions\NoMatchingExporter;
 use Psl\Dict;
 use Psl\Iter;
-use Psl\Type;
+use Psl\Str;
+use Psl\Vec;
 
 function to_string(Exporters\Exporter $value): string
 {
@@ -81,22 +82,17 @@ function dict(array $value, ?Closure $keyExporter = null): Exporters\DictExporte
  */
 function join(array $values, string $glue = ''): Exported
 {
-    $first = true;
+    $values = Vec\map(
+        $values,
+        fn (string|Exported $v): Exported => is_string($v) ? new Exported($v) : $v,
+    );
 
-    $reducer = function (
-        Exported $acc, string|Exported $value,
-    ) use ($glue, &$first): Exported {
-        [$g, $first] = [$first ? '' : $glue, false];
-
-        if (Type\string()->matches($value)) {
-            return new Exported($acc->value . $g . $value, $acc->imports);
-        }
-
-        return new Exported(
-            $acc->value . $g . $value->value,
-            $acc->imports->merge($value->imports),
-        );
-    };
-
-    return Iter\reduce($values, $reducer, new Exported(''));
+    return new Exported(
+        Str\join(Vec\map($values, fn (Exported $v): string => $v->value), $glue),
+        Iter\reduce(
+            $values,
+            fn (Imports $acc, Exported $v): Imports => $acc->merge($v->imports),
+            new Imports(),
+        ),
+    );
 }

@@ -2,10 +2,10 @@
 
 namespace Major\Exporter;
 
-final class Exported
+final readonly class Exported
 {
     public function __construct(
-        public readonly string $value,
-        public readonly Imports $imports = new Imports(),
+        public string $value,
+        public Imports $imports = new Imports(),
     ) { }
 }

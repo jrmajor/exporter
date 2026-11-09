@@ -2,8 +2,6 @@
 
 namespace Major\Exporter\Exporters;
 
-use Major\Exporter\Exported;
-
 /**
  * @template T of scalar
  */
@@ -18,6 +16,4 @@ abstract class ScalarExporter implements Exporter
     final public function __construct(
         protected readonly mixed $value,
     ) { }
-
-    abstract public function export(): Exported;
 }
